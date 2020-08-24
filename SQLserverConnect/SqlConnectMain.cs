@@ -14,7 +14,7 @@ namespace SQLserverConnect
         {
             _da = new DataMapper();
         }
-        public AdminInteractor.PointControl.DataGateWay GetDataGateWay()
+        public AdminInteractor.PointControl.DataGateWay GetPointControlDataGateWay()
         {
             return _da as AdminInteractor.PointControl.DataGateWay;
         }

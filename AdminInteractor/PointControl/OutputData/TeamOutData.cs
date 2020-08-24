@@ -13,5 +13,6 @@ namespace AdminInteractor
         public string TeamName { get; set; }
 
         public int Point { get; set; }
+        public int PointOnSystem { get; set; }
     }
 }

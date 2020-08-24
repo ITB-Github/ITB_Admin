@@ -24,9 +24,17 @@ namespace AdminInteractor.PointControl
             _iDatagateway.ConnectionChanged += _iDatagateway_ConnectionChanged;
         }
 
-        private void _iDatagateway_ConnectionChanged(bool obj)
+        private void _iDatagateway_ConnectionChanged(object sender, EventArgs e)
         {
-            _GatewayConnected = obj;
+            if(sender is DataGateWay)
+            {
+                _GatewayConnected = ((DataGateWay)sender).IsConnectionOpen();
+            }
+            else
+            {
+                _GatewayConnected = false;
+            }
+             
             //throw new NotImplementedException();
         }
 
@@ -51,7 +59,7 @@ namespace AdminInteractor.PointControl
             set
             {
                 _teams = value;
-
+                sendTeamOutList(produceTeamOutList(_teams));
             }
         }
 
@@ -93,7 +101,8 @@ namespace AdminInteractor.PointControl
             {
                 Id = x.Id,
                 TeamName = x.TeamName,
-                Point = x.Point
+                Point = x.Point,
+                PointOnSystem = x.PointOnSystem
             }));
             return list;
         }

@@ -8,7 +8,7 @@ namespace AdminInteractor.PointControl
 {
     public interface DataGateWay
     {
-        event Action<bool> ConnectionChanged;
+        event EventHandler ConnectionChanged;
         string GetTeamsInJson();
         bool WriteTeamByJson(string teamJson);
         bool IsConnectionOpen();

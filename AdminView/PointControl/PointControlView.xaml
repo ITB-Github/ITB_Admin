@@ -8,7 +8,8 @@
         Title="PointControlView" Height="450" Width="800"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:vm="clr-namespace:AdminPresenterController.PointControl;assembly=AdminPresenterController"
-        d:DataContext="{d:DesignData /PointControl/DesignData/DummyData.xaml, IsDesignTimeCreatable=True}">
+        d:DataContext="{d:DesignData /PointControl/DesignData/DummyData.xaml, IsDesignTimeCreatable=True}"
+        Loaded="Window_Loaded">
     <!--Chỗ đesign data thư mục này cứ lấy thư mực gốc - chứa file app.cs là gốc sau đó duyệt vào bên trong-->
     <Window.Resources>
         <ResourceDictionary>

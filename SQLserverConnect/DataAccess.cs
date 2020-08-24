@@ -10,7 +10,7 @@ namespace SQLserverConnect
 {
     internal class DataAccess:SQLserver
     {
-        public DataAccess(Action<bool> connectedChanged) : base(connectedChanged)
+        public DataAccess() : base()
         {
 
         }

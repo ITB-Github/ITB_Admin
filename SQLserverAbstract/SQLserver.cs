@@ -12,13 +12,13 @@ namespace SQLserverAbstract
         protected string dbConnect = "server=localhost;database=ITB_CK;user id=ITB_Admin;pwd=123456";
         protected SqlConnection con;
 
-        public event Action<bool> ConnectionChanged;
+        
 
 
 
-        public SQLserver(Action<bool> connectionChanged)
+        public SQLserver()
         {
-            ConnectionChanged = connectionChanged;
+            
             OpenConnection();
             
         }
@@ -96,7 +96,7 @@ namespace SQLserverAbstract
             }
             catch(SqlException e)
             {
-                ConnectionChanged(false);
+                
             }
             finally
             {
@@ -134,7 +134,7 @@ namespace SQLserverAbstract
             }
             catch (SqlException e)
             {
-                ConnectionChanged(false);
+              
             }
             finally
             {
@@ -172,7 +172,7 @@ namespace SQLserverAbstract
             }
             catch (SqlException e)
             {
-                ConnectionChanged(false);
+             
             }
             finally
             {
@@ -211,7 +211,7 @@ namespace SQLserverAbstract
             }
             catch (SqlException e)
             {
-                ConnectionChanged(false);
+               
             }
             finally
             {
@@ -242,7 +242,7 @@ namespace SQLserverAbstract
             }
             catch (SqlException e)
             {
-                ConnectionChanged(false);
+               
             }
             return -1;
         }

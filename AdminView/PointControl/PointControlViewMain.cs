@@ -17,5 +17,10 @@ namespace AdminView.PointControl
         {
             return _pointControlView;
         }
+
+        public AdminPresenterController.PointControl.PointControlViewModel GetPointControlViewModel()
+        {
+            return _pointControlView.DataContext as AdminPresenterController.PointControl.PointControlViewModel;
+        }
     }
 }

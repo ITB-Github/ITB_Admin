@@ -54,6 +54,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ServiceBuilder.cs" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,6 +85,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PointControlRunner.cs" />
     <Compile Include="PointControl\BoolToColorConverter.cs" />
     <Compile Include="PointControl\PointControlView.xaml.cs">
       <DependentUpon>PointControlView.xaml</DependentUpon>
@@ -116,9 +118,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdminInteractor\AdminInteractor.csproj">
+      <Project>{106739ff-cccd-4deb-b5a0-b50b4734ab44}</Project>
+      <Name>AdminInteractor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AdminPresenterController\AdminPresenterController.csproj">
       <Project>{0f73c72b-c7ac-46e4-94fb-60b3cd058c0c}</Project>
       <Name>AdminPresenterController</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLserverConnect\SQLserverConnect.csproj">
+      <Project>{37a9caaf-2ed7-45b7-9cb3-82513a650cef}</Project>
+      <Name>SQLserverConnect</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -34,5 +34,11 @@ namespace AdminView.PointControl
 
 
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            PointControlViewModel vm = DataContext as PointControlViewModel;
+            vm.GetTeams();
+        }
     }
 }

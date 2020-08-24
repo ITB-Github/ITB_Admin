@@ -17,7 +17,15 @@ namespace AdminView
         public static void Main()
         {
             Application app = new Application();
-            app.Run(new PointControl.PointControlView());
+            //app.Run(new PointControl.PointControlView());
+
+            ServiceBuilder service = new ServiceBuilder();
+
+            PointControlRunner pointControlrunner = new PointControlRunner();
+            pointControlrunner.AttachService(service);
+
+            app.Run(pointControlrunner.Run());
+
         }
     }
 }

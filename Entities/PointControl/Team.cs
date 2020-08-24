@@ -15,5 +15,7 @@ namespace Entities.PointControl
         public string TeamName { get; set; }
         [JsonProperty("Point")]
         public int Point { get; set; }
+        [JsonProperty("PointOnSystem")]
+        public int PointOnSystem { get; set; }
     }
 }

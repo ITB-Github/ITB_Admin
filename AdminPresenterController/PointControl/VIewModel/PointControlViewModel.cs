@@ -10,7 +10,7 @@ namespace AdminPresenterController.PointControl
     public class PointControlViewModel: ViewModelBase
     {
         IControllerPointControl _iCtrl;
-        public void AttachController(IControllerPointControl iCtrl)
+        internal void AttachController(IControllerPointControl iCtrl)
         {
             _iCtrl = iCtrl;
         }
@@ -41,6 +41,15 @@ namespace AdminPresenterController.PointControl
         {
             TeamViewModels = new ObservableCollection<TeamViewModel>();
             TeamViewModels.Add(new TeamViewModel());
+        }
+
+        public void GetTeams()
+        {
+            //throw new NotImplementedException();
+            if(_iCtrl!=null)
+            {
+                _iCtrl.GetTeams();
+            }
         }
     }
 }
