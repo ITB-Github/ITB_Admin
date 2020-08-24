@@ -42,19 +42,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControllerBase.cs" />
+    <Compile Include="PointControl\PresenterControllerMain.cs" />
     <Compile Include="PointControl\Controller.cs" />
     <Compile Include="PointControl\Converter.cs" />
     <Compile Include="PointControl\IController\IControllerPointControl.cs" />
-    <Compile Include="PointControl\PointControlViewModel.cs" />
+    <Compile Include="PointControl\VIewModel\PointControlViewModel.cs" />
     <Compile Include="PointControl\Presenter.cs" />
     <Compile Include="PointControl\ViewModelitem\TeamViewModel.cs" />
     <Compile Include="PresenterBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PointControl\VIewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AdminInteractor\AdminInteractor.csproj">
       <Project>{106739ff-cccd-4deb-b5a0-b50b4734ab44}</Project>

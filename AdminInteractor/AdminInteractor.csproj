@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InteractorBase.cs" />
+    <Compile Include="PointControl\InteractorMain.cs" />
     <Compile Include="PointControl\OutputData\ConnectionOutData.cs" />
     <Compile Include="PointControl\Interface\DataGateWay.cs" />
     <Compile Include="PointControl\Interface\InputBoundary.cs" />

@@ -88,6 +88,7 @@
     <Compile Include="PointControl\PointControlView.xaml.cs">
       <DependentUpon>PointControlView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PointControl\PointControlViewMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

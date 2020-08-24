@@ -9,6 +9,12 @@ namespace AdminPresenterController.PointControl
 {
     public class PointControlViewModel: ViewModelBase
     {
+        IControllerPointControl _iCtrl;
+        public void AttachController(IControllerPointControl iCtrl)
+        {
+            _iCtrl = iCtrl;
+        }
+
         ObservableCollection<TeamViewModel> _TeamViewModels;
         public ObservableCollection<TeamViewModel> TeamViewModels
         {

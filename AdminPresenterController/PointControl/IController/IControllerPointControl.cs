@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdminPresenterController.PointControl
 {
-    interface IControllerPointControl
+    public interface IControllerPointControl
     {
         void GetTeams();
         void SetPoint(string teamId, int point);
