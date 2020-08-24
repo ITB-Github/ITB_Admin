@@ -8,5 +8,8 @@ namespace AdminInteractor.PointControl
 {
     public interface OutputBoundary
     {
+        void ReceiveTeams(List<TeamOutData> datas);
+        void UpdateSuccessState(bool state);
+        void ReceiveConnectionState(ConnectionOutData conn);
     }
 }

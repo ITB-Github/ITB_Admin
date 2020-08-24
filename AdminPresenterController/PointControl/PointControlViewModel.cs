@@ -20,6 +20,21 @@ namespace AdminPresenterController.PointControl
             }
         }
 
-        public 
+        bool _IsConnected;
+        public bool IsConnected
+        {
+            get => _IsConnected;
+            set
+            {
+                _IsConnected = value;
+                RaisePropertyChanged("IsConnected");
+            }
+        }
+
+        public  PointControlViewModel()
+        {
+            TeamViewModels = new ObservableCollection<TeamViewModel>();
+            TeamViewModels.Add(new TeamViewModel());
+        }
     }
 }

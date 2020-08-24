@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AdminPresenterController.PointControl;
 
 namespace AdminView.PointControl
 {
@@ -22,6 +23,16 @@ namespace AdminView.PointControl
         public PointControlView()
         {
             InitializeComponent();
+            DataContext = new PointControlViewModel();
+        }
+
+        private void icRefresh_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            if (e.ChangedButton != MouseButton.Left)
+                return;
+
+
         }
     }
 }

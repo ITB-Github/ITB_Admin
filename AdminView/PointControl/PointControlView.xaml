@@ -6,13 +6,17 @@
         xmlns:local="clr-namespace:AdminView.PointControl"
         mc:Ignorable="d"
         Title="PointControlView" Height="450" Width="800"
-        xmlns:fa="http://schemas.fontawesome.io/icons/">
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:vm="clr-namespace:AdminPresenterController.PointControl;assembly=AdminPresenterController"
+        d:DataContext="{d:DesignData /PointControl/DesignData/DummyData.xaml, IsDesignTimeCreatable=True}">
+    <!--Chỗ đesign data thư mục này cứ lấy thư mực gốc - chứa file app.cs là gốc sau đó duyệt vào bên trong-->
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/AdminView;component/PointControl/PointControlViewStyle.xaml"/> 
             </ResourceDictionary.MergedDictionaries>
             <local:BoolToColorConverter x:Key="BoolToColorConverter"></local:BoolToColorConverter>
+            
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -41,7 +45,8 @@
                                      Height="14"
                                      Margin="3"
                                      Style="{StaticResource AwesomeFontButtonStyle}"
-                                     ></fa:ImageAwesome>
+                                     x:Name="icRefresh"
+                                     MouseDown="icRefresh_MouseDown"></fa:ImageAwesome>
                 </WrapPanel>
 
             </Grid>
@@ -49,8 +54,9 @@
                 <DataGrid Margin="0,10,10,20"
                           FontSize="16"
                           MinRowHeight="18"
+                          
                               x:Name="dgTeam"
-                              ItemsSource="{Binding Path=Teams}"
+                              ItemsSource="{Binding Path=TeamViewModels}"
                               AutoGenerateColumns="False"
                               CanUserAddRows="False"
                               CanUserDeleteRows="False"
@@ -63,19 +69,37 @@
                                             ClipboardContentBinding="{x:Null}" 
                                             Header="Đội Chơi" 
                                             IsReadOnly="True"
-                                            Width="150"/>
-                        <DataGridTextColumn Binding="{Binding Path=Point, Mode=OneTime}" 
+                                            Width="150">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+
+                        <!--Bản chất của text colum là textblock-->
+                        <DataGridTextColumn 
+                            
+                            Binding="{Binding Path=Point, Mode=OneTime}" 
                                             ClipboardContentBinding="{x:Null}" 
                                             Header="Điểm" 
                                             IsReadOnly="True"
-                                            Width="50"/>
+                                            Width="50">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
                         <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" 
                                                 Header="Điểm Set Bằng Tay" 
                                                 IsReadOnly="False"
                                                 Width="175">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Style="{StaticResource TextBoxStyle}" 
+                                    <TextBox 
+                                        Margin="5"
+                                        Style="{StaticResource TextBoxStyle}" 
                                                  Text="{Binding Path=PointSet, Mode=TwoWay}"></TextBox>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -90,6 +114,7 @@
                                 <DataTemplate>
                                     <Button  Content="Set"
                                                  MinWidth="45"
+                                                 Margin="5"
                                                  ></Button>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

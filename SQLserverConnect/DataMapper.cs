@@ -19,17 +19,20 @@ namespace SQLserverConnect
 
         public string GetTeamsInJson()
         {
-            throw new NotImplementedException();
+            return _da.GetTeamsInJson();
+            //throw new NotImplementedException();
         }
 
         public bool IsConnectionOpen()
         {
-            throw new NotImplementedException();
+            return _da.IsConnectionOpen;
+            //throw new NotImplementedException();
         }
 
-        public int WriteTeamsByJson(string teamArrJson)
+        public bool WriteTeamByJson(string teamJson)
         {
-            throw new NotImplementedException();
+            return _da.WriteTeamByJson(teamJson);
+            //throw new NotImplementedException();
         }
     }
 }

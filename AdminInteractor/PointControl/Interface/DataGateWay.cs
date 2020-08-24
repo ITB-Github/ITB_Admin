@@ -10,7 +10,7 @@ namespace AdminInteractor.PointControl
     {
         event Action<bool> ConnectionChanged;
         string GetTeamsInJson();
-        int WriteTeamsByJson(string teamArrJson);
+        bool WriteTeamByJson(string teamJson);
         bool IsConnectionOpen();
     }
 }

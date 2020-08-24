@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminInteractor
+namespace AdminInteractor.PointControl
 {
-    public class Class1
+    public struct ConnectionOutData
     {
+        public bool IsConnected { get; set; }
+
     }
 }

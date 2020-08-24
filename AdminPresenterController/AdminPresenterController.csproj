@@ -53,8 +53,13 @@
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PointControl\DesignData\" />
     <Folder Include="PointControl\VIewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdminInteractor\AdminInteractor.csproj">
+      <Project>{106739ff-cccd-4deb-b5a0-b50b4734ab44}</Project>
+      <Name>AdminInteractor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

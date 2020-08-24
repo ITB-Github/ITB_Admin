@@ -41,18 +41,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="PointControl\Controller.cs" />
+    <Compile Include="InteractorBase.cs" />
+    <Compile Include="PointControl\OutputData\ConnectionOutData.cs" />
     <Compile Include="PointControl\Interface\DataGateWay.cs" />
     <Compile Include="PointControl\Interface\InputBoundary.cs" />
     <Compile Include="PointControl\Interactor.cs" />
     <Compile Include="PointControl\Interface\OutputBoundary.cs" />
-    <Compile Include="PointControl\Presenter.cs" />
+    <Compile Include="PointControl\InputData\TeamInData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PointControl\OutputData\TeamOutData.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="PointControl\InputData\" />
-    <Folder Include="PointControl\OutputData\" />
+    <ProjectReference Include="..\BufferEntities\BufferEntities.csproj">
+      <Project>{e10dad48-2375-4914-8c2a-be0f2ac7166b}</Project>
+      <Name>BufferEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{c0d5a565-ee80-436a-b857-bbb5e8d5d0ad}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{830bbbde-8807-4482-94b1-83325a696443}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

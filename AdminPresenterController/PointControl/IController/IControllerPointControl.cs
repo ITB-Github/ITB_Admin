@@ -8,5 +8,7 @@ namespace AdminPresenterController.PointControl
 {
     interface IControllerPointControl
     {
+        void GetTeams();
+        void SetPoint(string teamId, int point);
     }
 }

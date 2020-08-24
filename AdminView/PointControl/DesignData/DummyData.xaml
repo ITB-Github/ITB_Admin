@@ -1,0 +1,22 @@
+﻿<vm:PointControlViewModel 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:AdminView.PointControl.Design_Data"
+        xmlns:vm="clr-namespace:AdminPresenterController.PointControl;assembly=AdminPresenterController"
+        IsConnected="False"                              
+                              >
+    <vm:PointControlViewModel.TeamViewModels>
+        <vm:TeamViewModel TeamName="Team Sample 1"
+                              Id="1"
+                              Point="200"
+                              PointSet="300"></vm:TeamViewModel>
+        <vm:TeamViewModel TeamName="Team Sample 2"
+                              Id="2"
+                              Point="150"
+                              PointSet="150"></vm:TeamViewModel>
+        <vm:TeamViewModel TeamName="Team Sample 3"
+                              Id="3"
+                              Point="150"
+                              PointSet="50"></vm:TeamViewModel>
+    </vm:PointControlViewModel.TeamViewModels>
+</vm:PointControlViewModel>

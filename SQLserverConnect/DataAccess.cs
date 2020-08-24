@@ -21,10 +21,10 @@ namespace SQLserverConnect
             return base.getJsonWithProc(sqlProc);
         }
 
-        public int WriteTeamsByJson(string teamArrJson)
+        public int WriteTeamByJson(string teamJson)
         {
             string sqlProc = "WriteTeamsInJsonByAdmin";
-            SqlParameter parameter = new SqlParameter("@Teams", teamArrJson);
+            SqlParameter parameter = new SqlParameter("@Team", teamJson);
             return base.writeByJson(sqlProc, parameter);
         }
     }

@@ -8,5 +8,7 @@ namespace AdminInteractor.PointControl
 {
     public interface InputBoundary
     {
+        bool UpdateTeam(TeamInData data);
+        void ReceiveRequestTeams();
     }
 }
