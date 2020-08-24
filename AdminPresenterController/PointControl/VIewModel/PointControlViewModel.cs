@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace AdminPresenterController.PointControl
 {
@@ -37,10 +38,40 @@ namespace AdminPresenterController.PointControl
             }
         }
 
+        TeamViewModel _TeamChosen;
+        public TeamViewModel TeamChosen
+        {
+            get
+            {
+                return _TeamChosen;
+            }
+            set
+            {
+                _TeamChosen = value;
+                RaisePropertyChanged("TeamChosen");
+            }
+        }
+
+        Visibility _UpdateStateVisibility;
+        public Visibility UpdateStateVisibility
+        {
+            get
+            {
+                return _UpdateStateVisibility;
+            }
+            set
+            {
+                _UpdateStateVisibility = value;
+                RaisePropertyChanged("UpdateStateVisibility");
+            }
+        }
+
         public  PointControlViewModel()
         {
             TeamViewModels = new ObservableCollection<TeamViewModel>();
             TeamViewModels.Add(new TeamViewModel());
+
+            UpdateStateVisibility = Visibility.Collapsed;
         }
 
         public void GetTeams()
@@ -50,6 +81,14 @@ namespace AdminPresenterController.PointControl
             {
                 _iCtrl.GetTeams();
             }
+        }
+
+        public void SetPoint(TeamViewModel team)
+        {
+            if (team == null)
+                return;
+            UpdateStateVisibility = Visibility.Collapsed;
+            _iCtrl.SetPoint(team.Id, team.PointSet);
         }
     }
 }

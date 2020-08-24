@@ -40,5 +40,11 @@ namespace AdminView.PointControl
             PointControlViewModel vm = DataContext as PointControlViewModel;
             vm.GetTeams();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PointControlViewModel vm = DataContext as PointControlViewModel;
+            vm.SetPoint(dgTeam.SelectedItem as TeamViewModel);
+        }
     }
 }

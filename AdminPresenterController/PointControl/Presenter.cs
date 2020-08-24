@@ -42,7 +42,7 @@ namespace AdminPresenterController.PointControl
             //throw new NotImplementedException();
            if(state)
            {
-            
+                _pcvm.UpdateStateVisibility = System.Windows.Visibility.Visible;
            }
         }
     }

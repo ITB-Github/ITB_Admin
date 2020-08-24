@@ -30,8 +30,17 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
-                <TextBlock Text="Các đội chơi"
+                <WrapPanel HorizontalAlignment="Left">
+                    <TextBlock Text="Các đội chơi"
                                Style="{StaticResource TextBlockHeaderStyle}"></TextBlock>
+                    <fa:ImageAwesome Icon="CheckCircle" 
+                                     Margin="5" 
+                                     Width="12" 
+                                     Height="12"
+                                     Foreground="#FF429018"
+                                     Visibility="{Binding UpdateStateVisibility}"></fa:ImageAwesome>
+                </WrapPanel>
+                
 
                 <WrapPanel HorizontalAlignment="Right" Height="21" Margin="0,0,-0.429,0.143" VerticalAlignment="Bottom"
                                >
@@ -57,16 +66,16 @@
                           MinRowHeight="18"
                           
                               x:Name="dgTeam"
-                              ItemsSource="{Binding Path=TeamViewModels}"
+                              ItemsSource="{Binding Path=TeamViewModels,Mode=TwoWay}"
                               AutoGenerateColumns="False"
                               CanUserAddRows="False"
                               CanUserDeleteRows="False"
-                              SelectionMode="Extended"
+                              SelectionMode="Single"
                               ScrollViewer.CanContentScroll="True"
                               ScrollViewer.VerticalScrollBarVisibility="Auto"
                               ScrollViewer.HorizontalScrollBarVisibility="Auto">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=TeamName, Mode=OneTime}" 
+                        <DataGridTextColumn Binding="{Binding Path=TeamName, Mode=TwoWay}" 
                                             ClipboardContentBinding="{x:Null}" 
                                             Header="Đội Chơi" 
                                             IsReadOnly="True"
@@ -81,7 +90,7 @@
                         <!--Bản chất của text colum là textblock-->
                         <DataGridTextColumn 
                             
-                            Binding="{Binding Path=Point, Mode=OneTime}" 
+                            Binding="{Binding Path=Point, Mode=TwoWay}" 
                                             ClipboardContentBinding="{x:Null}" 
                                             Header="Điểm" 
                                             IsReadOnly="True"
@@ -101,7 +110,7 @@
                                     <TextBox 
                                         Margin="5"
                                         Style="{StaticResource TextBoxStyle}" 
-                                                 Text="{Binding Path=PointSet, Mode=TwoWay}"></TextBox>
+                                                 Text="{Binding Path=PointSet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -116,6 +125,7 @@
                                     <Button  Content="Set"
                                                  MinWidth="45"
                                                  Margin="5"
+                                             Click="Button_Click"
                                                  ></Button>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:AdminView.PointControl.Design_Data"
         xmlns:vm="clr-namespace:AdminPresenterController.PointControl;assembly=AdminPresenterController"
         IsConnected="False"                              
-                              >
+        UpdateStateVisibility="Visible"                      >
     <vm:PointControlViewModel.TeamViewModels>
         <vm:TeamViewModel TeamName="Team Sample 1"
                               Id="1"
